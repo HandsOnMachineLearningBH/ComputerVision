@@ -27,6 +27,16 @@ class Image:
         self.image = self.image[:,::-1]
         return self
 
+    def turn_left(self):
+        self.image = numpy.transpose(self.image, (1, 0, 2))
+        self.image = numpy.flipud(self.image)
+        return self
+
+    def turn_right(self):
+        self.image = numpy.transpose(self.image, (1, 0, 2))
+        self.image = numpy.fliplr(self.image)
+        return self
+
     def reverse_colours(self):
         self.image = 255-self.image[:,:]
         return self
